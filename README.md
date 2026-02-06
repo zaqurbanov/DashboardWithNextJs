@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖥️ Next.js Dashboard Project
 
-## Getting Started
+## English
 
-First, run the development server:
+### Overview
+This is an experimental **Dashboard project** built with **Next.js**.  
+The main goal is to implement **User Authentication** and **Post Management** features.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Currently, the project is in its early stage and not fully functional yet.  
+As new features are added, they will be documented here in the README.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 **Test Domain:** [dashboard-with-next-js-eta.vercel.app](https://dashboard-with-next-js-eta.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Planned Features
+- User authentication (sign up, login, logout)
+- Post creation and management
+- Dashboard UI with protected routes
+- Continuous updates with new functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Azərbaycan 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Ümumi Məlumat
+Bu layihə **Next.js** ilə hazırlanmış eksperimental **Dashboard** layihəsidir.  
+Əsas məqsəd **İstifadəçi Auth** və **Post idarəetmə** funksionallıqlarını tətbiq etməkdir.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Layihə hələ ilkin mərhələdədir və tam hazır deyil.  
+Yeni funksionallıqlar əlavə olunduqca README faylında paylaşılacaq.  
 
-## Deploy on Vercel
+🔗 **Test Domain:** [dashboard-with-next-js-eta.vercel.app](https://dashboard-with-next-js-eta.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Planlaşdırılan Funksiyalar
+- İstifadəçi qeydiyyatı və giriş sistemi
+- Postların yaradılması və idarə olunması
+- Dashboard interfeysi və qorunan səhifələr
+- Davamlı yeniləmələr və yeni imkanlar
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
