@@ -1,17 +1,15 @@
 
-"use client"
 import { menu } from '@/constants/constants'
 import React from 'react'
 import MenuLinks from './MenuLinks'
 import UserImage from '@/app/_components/sharedComponents/UserImage'
 import UserInfo from '../../sharedComponents/UserInfo'
-import { usePathname } from 'next/navigation'
+import MenuItems from './MenuItems'
 
 const Sidebar = () => {
-  const path = usePathname()
   return (
-    <div className=' p-5  rounded-2xl min-h-full overflow-y-auto '>
-      <div className='flex items-center gap-1 text-soft '>
+    <div className=' p-3   min-h-full overflow-y-auto '>
+      <div className='flex items-center gap-3 text-soft '>
         <UserImage
         />
         <UserInfo
@@ -21,19 +19,17 @@ const Sidebar = () => {
 
       </div>
 
-      <ul className='flex flex-col gap-4 mt-8'>
+      <ul className='flex flex-col gap-3 mt-5'>
         {menu.map((item, index) => {
           return (
             <li key={index}>
-              <span className='text-blue-100 font-bold text-3xl'>
+              <span className='text-blue-100 font-bold text-xl'>
                 {item.title}
               </span>
-              <ul className='flex flex-col  gap-4  text-2xl mt-5'>
+              <ul className='flex flex-col  gap-2   mt-2'>
                 {item.list.map((item, index) => {
                   return (
-                    <li key={index} className={`text-amber-50 hover:text-black hover:bg-amber-100/50  p-2 rounded-xs ${path === item.path && "bg-amber-100 text-black"}`}>
-                      <MenuLinks item={item} />
-                    </li>
+                  <MenuItems item={item} key={item.id}/>
                   )
                 })}
 

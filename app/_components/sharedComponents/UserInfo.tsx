@@ -6,8 +6,8 @@ const UserInfo = ({name,role}:{
 }) => {
   return (
     <div className='flex flex-col'>
-      <span className='font-bold text-2xl'>{name}</span>
-      <span className='text-2xl'>{role}</span>
+      <span className='font-bold text-xl'>{name}</span>
+      <span className='text-xl'>{role}</span>
     </div>
   )
 }

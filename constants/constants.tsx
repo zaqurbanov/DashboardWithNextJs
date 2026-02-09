@@ -9,6 +9,7 @@ export interface MenuItem {
   title: string;
   path: string ;
   icon: React.ReactNode;
+  id:string;
 }
 
 export const menu: Menu[] = [
@@ -19,16 +20,19 @@ export const menu: Menu[] = [
         title: "Dashboard",
         path: "/dashboard",
         icon: <MdDashboard />,
+        id:"1"
       },
        {
         title: "Users",
         path: "/dashboard/users",
         icon: <MdPeople />,
+        id:"2"
       },
        {
         title: "Products",
         path: "/dashboard/products",
         icon: <MdOutlineProductionQuantityLimits />,
+        id:"3"
       },
     ]
   },
@@ -39,16 +43,19 @@ export const menu: Menu[] = [
         title: "Revenue",
         path: "/dashboard/revenue",
         icon: <MdReceipt />,
+        id:"4"
       },
          {
         title: "Reports",
         path: "/dashboard/reports",
         icon: <MdReport />,
+        id:"5"
       },
          {
         title: "Teams",
         path: "/dashboard/teams",
         icon: <MdPeople />,
+        id:"6"
       },
     ]
   },
@@ -60,11 +67,13 @@ export const menu: Menu[] = [
         title: "Settings",
         path: "/dashboard/users/settings",
         icon: <MdSettings />,
+        id:"7"
       },
         {
         title: "Help",
         path: "/dashboard/users/help",
         icon: <MdHelp />,
+        id:"8"
       },
     ]
   },
