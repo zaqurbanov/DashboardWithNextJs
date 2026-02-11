@@ -3,7 +3,7 @@ import { menu } from '@/constants/constants'
 import React from 'react'
 import MenuLinks from './MenuLinks'
 import UserImage from '@/app/_components/sharedComponents/UserImage'
-import UserInfo from '../../sharedComponents/UserInfo'
+import UserInfo from '../sharedComponents/UserInfo'
 import MenuItems from './MenuItems'
 
 const Sidebar = () => {
@@ -29,7 +29,7 @@ const Sidebar = () => {
               <ul className='flex flex-col  gap-2   mt-2'>
                 {item.list.map((item, index) => {
                   return (
-                  <MenuItems item={item} key={item.id}/>
+                    <MenuItems item={item} key={item.id} />
                   )
                 })}
 
