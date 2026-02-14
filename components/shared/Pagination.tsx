@@ -13,7 +13,7 @@ const Pagination = ({ page, total,limit }: any) => {
     }
   return (
     <div
-      className="neu-inset p-3 flex gap-1 justify-center rounded-md
+      className="neu-flat p-3 flex gap-1 justify-center rounded-md
      "
     >
         {Array.from({length:Math.ceil(total/limit)}).map((item,index)=>{return (

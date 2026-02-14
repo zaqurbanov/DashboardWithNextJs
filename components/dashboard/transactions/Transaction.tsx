@@ -11,13 +11,13 @@ const Transaction = async() => {
       <div>
         <h2 className="text-2xl neu-inset text-blue-500 p-2 rounded-xl">Latest Transactions</h2>
       </div>
-      <div className=" max-h-96 overflow-y-auto custom-scroll">
+      <div className=" max-h-96 overflow-y-auto overflow-x-auto custom-scroll">
         <div className="">
 
 
       <table  className="w-full border-collapse   border-gray-200 " >
         <thead className="  ">
-          <tr className=" ">
+          <tr className=" neu-flat rounded-xl">
             <GenerateTableHeader headers={transactionTableHeader} />
           </tr>
         </thead>
@@ -25,7 +25,7 @@ const Transaction = async() => {
           {
             data.map((item,index)=>{
               return (
-                <tr key={item.id} className=" rounded-xl">
+                <tr key={item.id} className=" neu-inset rounded-xl">
                   <TransactionTableBody item={item}  />
                 </tr>
               )

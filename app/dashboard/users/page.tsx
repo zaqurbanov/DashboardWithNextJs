@@ -17,7 +17,6 @@ interface UsersPageProps{
 const UsersPage = async ({searchParams}:UsersPageProps) => {
   const params  = await searchParams
   const page  = Number(params?.page) ||1
-  console.log(params?.page)
   const limit  = 5
   const  {users,total}= await getUsers(page,limit);
 

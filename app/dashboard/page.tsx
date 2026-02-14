@@ -9,15 +9,15 @@ export const metadata = {
 };
 const DashBoardPage = () => {
   return (
-    <div className='flex gap-2'>
+    <div className=' flex flex-col md:flex-row gap-2'>
       {/* card wrapper */}
-      <div className='flex-3'>
+      <div className='md:flex-3'>
         <CardContainer />
         <Transaction/>
     <Chart/>
     
       </div>
-      <div className='flex-1'>
+      <div className='md:flex-1'>
       <RightBar/>
 
       </div>

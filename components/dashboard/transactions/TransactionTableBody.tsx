@@ -8,7 +8,7 @@ const TransactionTableBody = ({item}:{item:TransactionsInterface}) => {
   return (
     <>
 
-      <td className='neu-inset rounded-xl'>
+      <td className=''>
         <div className='flex items-center gap-2 p-2'>
         <Image src={item.image} height={50} width={50} alt={item.name} className='border rounded-full' /> 
         <p className=''>
@@ -18,18 +18,18 @@ const TransactionTableBody = ({item}:{item:TransactionsInterface}) => {
 
         </div>
         </td>
-        <td className='neu-inset rounded-xl'>
+        <td className=''>
             <p className={`     p-1 w-max mx-auto text-black font-bold min-w-36 text-center rounded-md `}
             style={{
               color:typeColor.text
             }}>{item.status}</p>
         </td>
 
-        <td className='neu-inset rounded-xl'>
+        <td className=''>
                 <p className='text-center'>{item.date}</p>
         </td>
 
-        <td className='neu-inset rounded-xl'>
+        <td className=''>
             <p className='text-center'>
             {item.amount} {item.amountType}
 
