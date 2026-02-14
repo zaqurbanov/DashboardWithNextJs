@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className='flex items-center gap-2'>
       <MdSearch />
-<input type="text" placeholder='Search...' className='bg-transparent border-none outline-none text-soft text-color-soft'/>
+<input type="text" placeholder='Search...' className='bg-transparent border-none outline-none '/>
 
     </div>
   )

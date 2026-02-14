@@ -6,7 +6,7 @@ const PageTitle = () => {
 const path = usePathname()
 const title = path.split("/").pop()
   return (
-    <h1 className='text-soft text-color-soft'>{title!.charAt(0).toUpperCase() + title!.slice(1)}
+    <h1 className='text-blue-600 font-bold text-2xl'>{title!.charAt(0).toUpperCase() + title!.slice(1)}
     
     </h1>
   )

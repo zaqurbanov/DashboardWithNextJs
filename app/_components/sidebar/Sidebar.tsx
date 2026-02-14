@@ -9,7 +9,7 @@ import MenuItems from './MenuItems'
 const Sidebar = () => {
   return (
     <div className=' p-3   min-h-full overflow-y-auto '>
-      <div className='flex items-center gap-3 text-soft '>
+      <div className='flex items-center gap-3  '>
         <UserImage
         />
         <UserInfo
@@ -23,10 +23,10 @@ const Sidebar = () => {
         {menu.map((item, index) => {
           return (
             <li key={index}>
-              <span className='text-blue-100 font-bold text-xl'>
+              <span className='  text-blue-600 neu-inset w-full flex  p-2 rounded-2xl font-bold text-xl '>
                 {item.title}
               </span>
-              <ul className='flex flex-col  gap-2   mt-2'>
+              <ul className='flex flex-col  gap-2   mt-9'>
                 {item.list.map((item, index) => {
                   return (
                     <MenuItems item={item} key={item.id} />

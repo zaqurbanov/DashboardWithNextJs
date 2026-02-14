@@ -5,7 +5,7 @@ const GenerateTableHeader = ({ headers }: { headers: TableHeader[] }) => {
     <>
       {headers.map((header: TableHeader) => {
         return (
-          <th key={header.key}>
+          <th key={header.key} className='p-3 neu-inset rounded-xl '>
             {header.label}
           </th>
         )

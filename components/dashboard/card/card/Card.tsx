@@ -6,7 +6,7 @@ import { FaPeopleCarryBox } from 'react-icons/fa6'
 
 const Card = ({card}:{card:CardItem}) => {
   return (
-    <div className='bg-container text p-4 flex  gap-5   rounded-xl'>  
+    <div className='bg-container neu-inset  text p-4 flex  gap-5   rounded-xl'>  
 
       <div>
           <FaPeopleCarryBox/>

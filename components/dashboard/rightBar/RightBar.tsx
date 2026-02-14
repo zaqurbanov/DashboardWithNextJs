@@ -1,8 +1,19 @@
 import React from 'react'
+import RightBarCard from './RightBarCard'
+import { getNews } from '@/services/news.services'
 
-const RightBar = () => {
+const RightBar =async () => {
+  const data  = await getNews()
   return (
-    <div>RightBar</div>
+    <div className='flex flex-col gap-5 p-2'>
+      {
+        data.map((card,index)=>{
+          return(<RightBarCard key={card.id} data={card} />)
+        })
+      }
+      
+      
+      </div>
   )
 }
 
