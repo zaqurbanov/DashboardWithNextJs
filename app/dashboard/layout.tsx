@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../_components/sidebar/Sidebar'
 import Navbar from '../_components/navbar/Navbar'
+import Footer from '../_components/footer/Footer'
 
 const DashboardLayout = ({
   children
@@ -18,6 +19,7 @@ const DashboardLayout = ({
         
         </div>
         {children}
+        <Footer/>
       </div>
 
 
