@@ -231,6 +231,4 @@ Dark mode is applied via a `data-theme="dark"` attribute on `<html>`. An inline 
 
 ---
 
-## License
 
-This project is open source and available under the [MIT License](LICENSE).
