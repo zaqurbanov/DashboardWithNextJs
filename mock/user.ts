@@ -1,6 +1,6 @@
 import { UserInterface } from "@/types/user/user";
 
-export const usersMock: UserInterface[] = [
+const _initialUsers: UserInterface[] = [
   {
     id: "1",
     name: "John Doe",
@@ -317,3 +317,7 @@ export const usersMock: UserInterface[] = [
     status: "inactive",
   }
 ];
+
+const _g = globalThis as typeof globalThis & { __usersMock?: UserInterface[] };
+if (!_g.__usersMock) _g.__usersMock = _initialUsers;
+export const usersMock = _g.__usersMock;

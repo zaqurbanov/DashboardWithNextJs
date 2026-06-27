@@ -1,99 +1,216 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════
+   LIGHT MODE (default)
+══════════════════════════════════════ */
 :root {
-  --bg: #f0f2f5;
-  --bgSoft: #ffffe3;
+  /* Page */
+  --bg:   #f0f2f5;
   --text: #1a1a1a;
-  --textSoft: #6a3737;
+  --text-soft: #666666;
+  --text-muted: #999999;
+  --border: #d1d9e6;
+
+  /* Neumorphic surfaces */
+  --neu-bg: #f0f2f5;
+  --neu-s1: #d1d9e6;   /* shadow dark side  */
+  --neu-s2: #ffffff;   /* shadow light side */
+
+  /* Brand */
+  --color-primary:      #7878ec;
+  --color-primary-dark: #3737dd;
+  --color-success:      #22c55e;
+  --color-danger:       #ef4444;
+  --color-warning:      #f59e0b;
 }
 
+/* ══════════════════════════════════════
+   DARK MODE
+══════════════════════════════════════ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:   #1e2028;
+  --text: #e2e8f0;
+  --text-soft: #9ca3af;
+  --text-muted: #6b7280;
+  --border: #2a2d3e;
+
+  --neu-bg: #1e2028;
+  --neu-s1: #15171e;
+  --neu-s2: #272b3a;
+}
+
+/* ══════════════════════════════════════
+   TAILWIND THEME TOKENS
+══════════════════════════════════════ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+@theme {
+  /* Animation tokens */
+  --animate-fade-in:        fade-in        0.3s ease-out;
+  --animate-fade-up:        fade-up        0.4s ease-out;
+  --animate-fade-down:      fade-down      0.3s ease-out;
+  --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.16,1,0.3,1);
+  --animate-slide-in-left:  slide-in-left  0.3s cubic-bezier(0.16,1,0.3,1);
+  --animate-scale-in:       scale-in       0.2s cubic-bezier(0.16,1,0.3,1);
+  --animate-shimmer:        shimmer        2s linear infinite;
+  --animate-float:          float          3s ease-in-out infinite;
+  --animate-glow-pulse:     glow-pulse     2s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════
+   NEUMORPHIC UTILITIES
+══════════════════════════════════════ */
 @layer utilities {
-  .custom-scroll::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    padding: 10px;
-    scroll-behavior: smooth;
-    background-color: #f5f5f0;
- box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
-    /* display: none; */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    
-    background-color: #7878ec;
-    border-radius: 10px;
-    /* display: none; */
-  }
+  /* Flat — raised surface */
   .neu-flat {
-    background: #f0f2f5;
+    background: var(--neu-bg);
     box-shadow:
-      6px 6px 12px #d1d9e6,
-      -6px -6px 12px #ffffff;
-      transition: all 1.8s ease
+      6px 6px 12px var(--neu-s1),
+      -6px -6px 12px var(--neu-s2);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
   }
-  .neu-flat:hover{
-  background: #f0f2f5;
-        box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
-        transition: all 1.8s ease;
+  .neu-flat:hover {
+    box-shadow:
+      inset 4px 4px 8px var(--neu-s1),
+      inset -4px -4px 8px var(--neu-s2);
   }
 
-    .neu-inset {
-        background: #f0f2f5;
-        box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
-      }
-      .neu-inset:hover{
-            background: #f0f2f5;
+  /* Inset — recessed surface */
+  .neu-inset {
+    background: var(--neu-bg);
     box-shadow:
-      6px 6px 12px #d1d9e6,
-      -6px -6px 12px #ffffff;
-      transition: all 1.8s ease
-      }
-      .neu-pressed {
-        box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
-      }
-      .neu-button {
-        background: #f0f2f5;
-        box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
-        transition: all 0.2s ease;
-      }
-      .neu-button:active {
-        box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
-      }
+      inset 4px 4px 8px var(--neu-s1),
+      inset -4px -4px 8px var(--neu-s2);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  .neu-inset:hover {
+    box-shadow:
+      6px 6px 12px var(--neu-s1),
+      -6px -6px 12px var(--neu-s2);
+  }
+
+  /* Pressed — active/selected state */
+  .neu-pressed {
+    background: var(--neu-bg);
+    box-shadow:
+      inset 2px 2px 5px var(--neu-s1),
+      inset -3px -3px 7px var(--neu-s2);
+  }
+
+  /* Button */
+  .neu-button {
+    background: var(--neu-bg);
+    box-shadow:
+      4px 4px 8px var(--neu-s1),
+      -4px -4px 8px var(--neu-s2);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .neu-button:active {
+    box-shadow:
+      inset 2px 2px 5px var(--neu-s1),
+      inset -3px -3px 7px var(--neu-s2);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--neu-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 8px;
+  }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #3737dd;
+    background: var(--color-primary-dark);
   }
 }
 
+/* ══════════════════════════════════════
+   COMPONENT LAYER
+══════════════════════════════════════ */
 @layer components {
   .bg-container {
-    @apply
-           transition-all 
-           duration-300 
-           ease-in-out 
-           p-2
-           backdrop-blur-3xl  
-          rounded-md;
-  }
-}
-@theme {
-  --color-soft: var(--bgSoft);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
+    @apply transition-all duration-300 ease-in-out p-2 backdrop-blur-3xl rounded-md;
   }
 }
 
+/* ══════════════════════════════════════
+   GLOBAL DARK MODE OVERRIDES
+   (for hardcoded inline border colors)
+══════════════════════════════════════ */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  color: var(--text);
+  color-scheme: dark;
+}
+
+[data-theme="dark"] table tr {
+  border-color: var(--border);
+}
+
+/* ══════════════════════════════════════
+   KEYFRAMES
+══════════════════════════════════════ */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(120, 120, 236, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(120, 120, 236, 0); }
+}
+
+/* ══════════════════════════════════════
+   ACCESSIBILITY
+══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:  0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
 body {
   background: var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }

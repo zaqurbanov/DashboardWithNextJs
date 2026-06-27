@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../_components/sidebar/Sidebar'
 import Navbar from '../_components/navbar/Navbar'
 import Footer from '../_components/footer/Footer'
+import PageTransition from '../_components/PageTransition'
 
 const DashboardLayout = ({
   children
@@ -16,9 +17,11 @@ const DashboardLayout = ({
       <div className=' flex flex-col gap-5 flex-4  shrink  '>
         <div className=' neu-flat   rounded-md p-5  '>
           <Navbar />
-        
+
         </div>
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
         <Footer/>
       </div>
 

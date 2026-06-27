@@ -6,13 +6,13 @@ import React from 'react'
 const ProductTableBody = ({item}:{item:ProductsInterface}) => {
   return (
     <>
-              <td>
+      <td>
         <div className='flex gap-3 p-2 items-center'>
             <Image src={item.image} height={50} width={50} alt={item.title} className='border rounded-full' />
             <p>{item.title}</p>
         </div>
       </td>
-      <td className='p-2 '>
+      <td className='p-2'>
         {item.description}
       </td>
       <td>
@@ -22,10 +22,12 @@ const ProductTableBody = ({item}:{item:ProductsInterface}) => {
         <p className='p-2'>{item.createdAt}</p>
       </td>
       <td className='p-2'>
-            <p className='p-2 text-red-600'>{item.stock}</p>
+        <p className={`p-2 font-medium ${item.stock <= 10 ? 'text-red-600' : 'text-green-600'}`}>
+          {item.stock}
+        </p>
       </td>
-      <td>
-        <ActionButtons/>
+      <td className='p-2'>
+        <ActionButtons id={item.id} type="product" />
       </td>
     </>
   )

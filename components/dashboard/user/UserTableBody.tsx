@@ -12,22 +12,23 @@ const UserTableBody = ({item}:{item:UserInterface}) => {
             <p>{item.name}</p>
         </div>
       </td>
-      <td className='p-2 '>
+      <td className='p-2'>
         {item.email}
       </td>
       <td>
         <p className='p-2'>{item.createdAt}</p>
       </td>
       <td>
-        <p className='p-2'>{item.role}</p>
+        <p className='p-2 capitalize'>{item.role}</p>
       </td>
       <td className='p-2'>
-            {item.status === 'active' ? <p className='p-2 text-green-600'>{item.status}</p> : <p className='p-2 text-red-600'>{item.status}</p>}
+        {item.status === 'active'
+          ? <p className='p-2 text-green-600 font-medium'>{item.status}</p>
+          : <p className='p-2 text-red-600 font-medium'>{item.status}</p>}
       </td>
-      <td>
-        <ActionButtons/>
+      <td className='p-2'>
+        <ActionButtons id={item.id} type="user" />
       </td>
-
     </>
   )
 }

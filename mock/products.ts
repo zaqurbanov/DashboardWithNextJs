@@ -1,6 +1,6 @@
 import { ProductsInterface } from "@/types/products/productsTypes";
 
-export const productMock: ProductsInterface[] = [
+const _initialProducts: ProductsInterface[] = [
   {
     id: "1",
     title: "Wireless Headphones",
@@ -272,3 +272,7 @@ export const productMock: ProductsInterface[] = [
     stock: 41
   }
 ];
+
+const _g = globalThis as typeof globalThis & { __productMock?: ProductsInterface[] };
+if (!_g.__productMock) _g.__productMock = _initialProducts;
+export const productMock = _g.__productMock;

@@ -12,10 +12,7 @@ const Sidebar = () => {
       <div className='flex items-center gap-3  '>
         <UserImage
         />
-        <UserInfo
-          name='Zaur Qurbanov'
-          role='Admin'
-        />
+        <UserInfo />
 
       </div>
 

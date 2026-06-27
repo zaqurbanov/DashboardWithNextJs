@@ -1,13 +1,21 @@
-import { usersMock } from "@/mock/user"
+import { usersMock } from "@/mock/user";
 
-    export const getUsers = async (page:number,limit:number)=>{
+export const getUsers = async (page: number, limit: number, search = "") => {
+  const q = search.toLowerCase().trim();
+  const filtered = q
+    ? usersMock.filter(
+        (u) =>
+          u.name.toLowerCase().includes(q) ||
+          u.email.toLowerCase().includes(q) ||
+          u.role.toLowerCase().includes(q)
+      )
+    : usersMock;
 
-        const start = (Number(page) - 1) * Number(limit)
-        const end  = start + Number(limit)
+  const start = (page - 1) * limit;
+  const end = start + limit;
+  return { users: filtered.slice(start, end), total: filtered.length };
+};
 
-        const result = await usersMock.slice(start,end)
-      return    {
-        users:result,
-        total:usersMock.length
-      }
-    }
+export const getUserById = async (id: string) => {
+  return usersMock.find((u) => u.id === id) ?? null;
+};
