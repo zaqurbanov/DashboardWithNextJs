@@ -152,7 +152,7 @@ export default function TeamsPage() {
             >
               <div className="relative shrink-0">
                 <Image
-                  src={u.img}
+                  src={u.image}
                   alt={u.name}
                   width={40}
                   height={40}
@@ -186,7 +186,7 @@ function MemberRow({
   index,
   badgeColor,
 }: {
-  user: { id: string; name: string; img: string; email: string; status: string };
+  user: { id: string; name: string; image: string; email: string; status: string };
   index: number;
   badgeColor: string;
 }) {
@@ -197,7 +197,7 @@ function MemberRow({
     >
       <div className="relative shrink-0">
         <Image
-          src={user.img}
+          src={user.image}
           alt={user.name}
           width={36}
           height={36}

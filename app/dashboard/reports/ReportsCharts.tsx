@@ -47,7 +47,7 @@ export function StatusPieChart({
         </Pie>
         <Tooltip
           contentStyle={tooltipStyle}
-          formatter={(v: number, name: string) => [v, name]}
+          formatter={(v, name) => [v, name]}
         />
         <Legend
           iconType="circle"
@@ -89,7 +89,7 @@ export function StockBarChart({
         />
         <Tooltip
           contentStyle={tooltipStyle}
-          formatter={(v: number) => [v, "Stock"]}
+          formatter={(v) => [v, "Stock"]}
         />
         <Bar dataKey="stock" fill="#7878ec" radius={[0, 6, 6, 0]} maxBarSize={18} />
       </BarChart>

@@ -1,6 +1,8 @@
-export function Skeleton({ className = "" }: { className?: string }) {
+import React from "react";
+
+export function Skeleton({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`relative overflow-hidden neu-inset rounded-lg ${className}`}>
+    <div className={`relative overflow-hidden neu-inset rounded-lg ${className}`} style={style}>
       <div
         className="absolute inset-0 animate-shimmer"
         style={{

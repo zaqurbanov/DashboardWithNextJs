@@ -39,7 +39,7 @@ export default function RevenueChart({ data }: { data: MonthlyRevenue[] }) {
             fontSize: 12,
             color: "var(--text, #1a1a1a)",
           }}
-          formatter={(value: number) => [`$${value.toLocaleString()}`, "Revenue"]}
+          formatter={(value) => [`$${(value ?? 0).toLocaleString()}`, "Revenue"]}
         />
         <Legend
           wrapperStyle={{ fontSize: 12, color: "#999", paddingTop: 8 }}
